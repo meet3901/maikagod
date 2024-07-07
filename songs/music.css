@@ -1,0 +1,295 @@
+/* 基本リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    width: 100%; /* Bodyの幅を全体に広げる */
+}
+
+a:hover {
+    color: inherit; /* 文字色を変えない */
+}
+
+
+/* ヘッダー */
+header {
+    background-color: #ffaaaa;
+    color: #fff;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between; /* ロゴとメニューを左右に分ける */
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* ナビゲーションメニューのスタイル */
+nav {
+    background-color: #ffaaaa; /* 背景色 */
+    padding: 1em;
+}
+
+.nav-menu {
+    list-style: none; /* ドットや番号を消す */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* 右寄せ */
+    gap: 1em; /* メニュー項目の間の隙間 */
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu a {
+    color: #fff; /* 文字色 */
+    text-decoration: none; /* 下線を消す */
+    padding: 0.5em 1em; /* 内側の余白 */
+    border-radius: 5px; /* 角を丸くする */
+    transition: background-color 0.3s; /* ホバー時のアニメーション */
+}
+
+.nav-menu a:hover {
+    background-color:#ffc8c8;
+    color: #fff; /* 色を元のままにする */
+}
+
+
+/* ドロップダウンメニューのスタイル */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffaaaa;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    max-height: 200px; /* スクロールの適用範囲を設定 */
+    overflow-y: auto; /* 縦方向のスクロールを有効化 */
+}
+
+.dropdown-content a {
+    color: #fff;
+    display: block;
+    border-bottom: 1px solid #ffc8c8;
+}
+
+.dropdown-content a:hover {
+    background-color: #ffc8c8;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #ffc8c8;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    background-color: #ffaaaa;
+    color: #fff;
+    padding: 1em 0;
+    width: 100%;
+    position: relative;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+    display: flex;
+    gap: 2em;
+}
+
+/* コンテンツ全体 */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 曲詳細セクション */
+.content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    max-width: 1200px; /* 最大幅を設定する例 */
+    min-width: 1000px; /* 最大幅を設定する例 */
+    width: 100%; /* 幅を100%に設定し、親要素に合わせる */
+    margin: 0 auto; /* 中央寄せ */
+}
+
+/* 曲タイトル */
+.title {
+    text-align: center;
+    width: 100%;
+}
+
+.title h1 {
+    font-size: 40px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.song {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    margin-bottom: 2em; /* 曲間の余白 */
+}
+
+.song h3 {
+    font-size: 30px;
+    color: #333;
+}
+
+.song-details {
+    display: flex;
+    flex-wrap: wrap; /* 小さい画面で折り返し */
+    gap: 1em;
+}
+
+p{
+    color:darkgray;
+    font-size: 15px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 10px 0;
+}
+
+.main-fhoto {
+    flex: 1; /* 可変幅 */
+    max-width: 100%; /* 写真の最大幅 */
+}
+
+.main-fhoto img {
+    width: 100%; /* メイン写真を親要素に合わせる */
+    height: auto;
+    border-radius: 10px;
+}
+
+.fhoto-list {
+    flex: 2; /* 可変幅 */
+    max-width: 30%; /* 親要素に対して100%の幅 */
+    display: flex;
+    flex-wrap: wrap; /* 小さい画面で折り返し */
+    gap: 1em;
+}
+
+.fhoto-list img {
+    width: 100%; /* リスト内の写真は3列で表示し、間隔を設定 */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 1em; /* 画像間の余白 */
+}
+
+.comment {
+    margin-top: 1em;
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* メンバーリスト */
+.content-right {
+    flex: 1;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+}
+
+.member-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1em;
+    justify-content: center; /* 中央揃え */
+}
+
+.member {
+    text-align: center;
+}
+
+.member img {
+    width: 100px;
+    height: 150px;
+    border-radius: 00%;
+    object-fit: cover; 
+}
+
+.member p {
+    font-size: 1em;
+    color: #333;
+}
+
+
+/* ギャラリーのセクション */
+.extra-photos {
+    margin-top: 2em; /* 上の要素との間に余白 */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+}
+
+.extra-photos h2 {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.extra-photo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 幅を大きく */
+    gap: 1em;
+    justify-items: center; /* 中央揃え */
+}
+
+.extra-photo-list img {
+    width: 100%;
+    max-width: 200px; /* 幅の最大値を設定 */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s; /* ホバー時のアニメーション */
+}
+
+.extra-photo-list img:hover {
+    transform: scale(1.05); /* ホバー時に少し拡大 */
+}
+
+/* メディアクエリ */
+@media (max-width: 800px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-left, .content-right {
+        width: 100%;
+    }
+}
+
+@media (min-width: 600px) {
+    .member-list {
+        grid-template-columns: repeat(3, 1fr); /* 幅600px以上の場合、3列に設定 */
+    }
+}

@@ -1,0 +1,279 @@
+/* 基本リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    width: 100%; /* Bodyの幅を全体に広げる */
+}
+
+a:hover {
+    color: inherit; /* 文字色を変えない */
+}
+
+/* ヘッダー */
+header {
+    background-color: #ffaaaa;
+    color: #fff;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between; /* ロゴとメニューを左右に分ける */
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* ナビゲーションメニューのスタイル */
+nav {
+    background-color: #ffaaaa; /* 背景色 */
+    padding: 1em;
+}
+
+.nav-menu {
+    list-style: none; /* ドットや番号を消す */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* 右寄せ */
+    gap: 1em; /* メニュー項目の間の隙間 */
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu a {
+    color: #fff; /* 文字色 */
+    text-decoration: none; /* 下線を消す */
+    padding: 0.5em 1em; /* 内側の余白 */
+    border-radius: 5px; /* 角を丸くする */
+    transition: background-color 0.3s; /* ホバー時のアニメーション */
+}
+
+.nav-menu a:hover {
+    background-color:#ffc8c8;
+    color: #fff; /* 色を元のままにする */
+}
+
+
+/* ドロップダウンメニューのスタイル */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffaaaa;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    max-height: 200px; /* スクロールの適用範囲を設定 */
+    overflow-y: auto; /* 縦方向のスクロールを有効化 */
+}
+
+.dropdown-content a {
+    color: #fff;
+    display: block;
+    border-bottom: 1px solid #ffc8c8;
+}
+
+.dropdown-content a:hover {
+    background-color: #ffc8c8;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #ffc8c8;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    background-color: #ffaaaa;
+    color: #fff;
+    padding: 1em 0;
+    width: 100%;
+    position: relative;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+/* メンバーのスタイル */
+.character-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.character {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    flex: 1 1 calc(20% - 4em); /* カードの幅を20%に設定 */
+    max-width: calc(20% - 2em); /* カードの最大幅を20%に設定 */
+    margin: 1em;
+    padding: 1em;
+    transition: transform 0.3s;
+}
+
+.character:hover {
+    transform: translateY(-5px);
+}
+
+.character img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.character h2 {
+    font-size: 1.25em;
+    color: #333;
+}
+
+.character h4 {
+    font-size: 0.75em;
+    color: #333;
+}
+
+.character p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+/* リンクのスタイル */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+/* 曲のリスト */
+.song-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+}
+
+.songs {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1em;
+    transition: transform 0.3s;
+}
+
+.songs:hover {
+    transform: translateY(-5px);
+}
+
+.songs img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.songs h2 {
+    font-size: 1.1em;
+    color: #333;
+    margin-top: 0.5em;
+}
+
+.songs p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 0.5em;
+}
+
+
+
+/* レスポンシブデザイン */
+@media (max-width: 1200px) {
+    .character {
+        flex: 1 1 calc(25% - 2em); /* 画面幅が1200px以下の場合、幅を25%に変更 */
+        max-width: calc(25% - 2em);
+    }
+}
+
+@media (max-width: 800px) {
+    .character {
+        flex: 1 1 calc(33.33% - 2em); /* 幅を33.33%に変更 */
+        max-width: calc(33.33% - 2em);
+    }
+}
+
+@media (max-width: 600px) {
+    .character {
+        flex: 1 1 calc(50% - 2em); /* 幅を50%に変更 */
+        max-width: calc(50% - 2em);
+    }
+}
+
+@media (max-width: 400px) {
+    .character {
+        flex: 1 1 100%; /* 幅を100%に変更 */
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .song-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 400px) {
+    .song-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+/* ナビゲーションメニューのレスポンシブ対応 */
+@media (max-width: 600px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .navbar li {
+        display: block;
+        text-align: center;
+        padding: 1em 0;
+    }
+
+    .navbar a {
+        font-size: 1em;
+    }
+}
+
+.show {
+    display: flex;
+}
