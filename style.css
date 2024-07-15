@@ -9,11 +9,20 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
-    width: 100%; /* Bodyの幅を全体に広げる */
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 a:hover {
-    color: inherit; /* 文字色を変えない */
+    color: #007bff;
+}
+
+a:hover {
+    color: inherit;
 }
 
 /* ヘッダー */
@@ -22,25 +31,28 @@ header {
     color: #fff;
     padding: 1em 0;
     display: flex;
-    justify-content: space-between; /* ロゴとメニューを左右に分ける */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     position: relative;
 }
 
-/* ナビゲーションメニューのスタイル */
+header h1 {
+    font-size: 2em;
+}
+
 nav {
-    background-color: #ffaaaa; /* 背景色 */
+    background-color: #ffaaaa;
     padding: 1em;
 }
 
 .nav-menu {
-    list-style: none; /* ドットや番号を消す */
+    list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-end; /* 右寄せ */
-    gap: 1em; /* メニュー項目の間の隙間 */
+    justify-content: flex-end;
+    gap: 1em;
 }
 
 .nav-menu li {
@@ -48,28 +60,26 @@ nav {
 }
 
 .nav-menu a {
-    color: #fff; /* 文字色 */
-    text-decoration: none; /* 下線を消す */
-    padding: 0.5em 1em; /* 内側の余白 */
-    border-radius: 5px; /* 角を丸くする */
-    transition: background-color 0.3s; /* ホバー時のアニメーション */
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .nav-menu a:hover {
-    background-color:#ffc8c8;
-    color: #fff; /* 色を元のままにする */
+    background-color: #ffc8c8;
+    color: #fff;
 }
 
-
-/* ドロップダウンメニューのスタイル */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #ffaaaa;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    max-height: 200px; /* スクロールの適用範囲を設定 */
-    overflow-y: auto; /* 縦方向のスクロールを有効化 */
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .dropdown-content a {
@@ -90,7 +100,6 @@ nav {
     background-color: #ffc8c8;
 }
 
-/* フッター */
 footer {
     text-align: center;
     background-color: #ffaaaa;
@@ -100,14 +109,12 @@ footer {
     position: relative;
 }
 
-/* メインコンテンツ */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1em;
 }
 
-/* メンバーのスタイル */
 .character-list {
     display: flex;
     flex-wrap: wrap;
@@ -121,8 +128,8 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
-    flex: 1 1 calc(20% - 4em); /* カードの幅を20%に設定 */
-    max-width: calc(20% - 2em); /* カードの最大幅を20%に設定 */
+    flex: 1 1 calc(20% - 4em);
+    max-width: calc(20% - 2em);
     margin: 1em;
     padding: 1em;
     transition: transform 0.3s;
@@ -154,17 +161,6 @@ main {
     margin-bottom: 1em;
 }
 
-/* リンクのスタイル */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-a:hover {
-    color: #007bff;
-}
-
-/* 曲のリスト */
 .song-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -203,77 +199,131 @@ a:hover {
     margin-bottom: 0.5em;
 }
 
+.show {
+    display: flex;
+}
 
-
-/* レスポンシブデザイン */
+/* メディアクエリ */
 @media (max-width: 1200px) {
     .character {
-        flex: 1 1 calc(25% - 2em); /* 画面幅が1200px以下の場合、幅を25%に変更 */
+        flex: 1 1 calc(25% - 2em);
         max-width: calc(25% - 2em);
     }
 }
 
 @media (max-width: 800px) {
     .character {
-        flex: 1 1 calc(33.33% - 2em); /* 幅を33.33%に変更 */
+        flex: 1 1 calc(33.33% - 2em);
         max-width: calc(33.33% - 2em);
     }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .nav-menu a {
+        font-size: 0.9em;
+        padding: 0.4em 0.8em;
+    }
 }
 
 @media (max-width: 600px) {
     .character {
-        flex: 1 1 calc(50% - 2em); /* 幅を50%に変更 */
+        flex: 1 1 calc(50% - 2em);
         max-width: calc(50% - 2em);
     }
-}
 
-@media (max-width: 400px) {
-    .character {
-        flex: 1 1 100%; /* 幅を100%に変更 */
-        max-width: 100%;
+    .character-list .character {
+        width: 48%;
+        margin-bottom: 10px;
     }
-}
 
-@media (max-width: 600px) {
+    .character-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .character {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        flex: 1 1 45%; /* ここを変更して要素の幅を調整 */
+        margin: 5px; /* 必要に応じて調整 */
+        padding: 1em;
+        transition: transform 0.3s;
+        max-width: 45%; /* ここを変更して要素の最大幅を調整 */
+    }
     .song-list {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .nav-menu a {
+        font-size: 0.8em;
+        padding: 0.3em 0.6em;
+    }
+
+    .character {
+        font-size: 0.8em;
+    }
+
+    .character img {
+        width: 80%;
+    }
+
+    .character h2 {
+        font-size: 1em;
+    }
+
+    .character p {
+        font-size: 0.8em;
+    }
+
+    .songs {
+        font-size: 0.8em;
+    }
+
+    .songs img {
+        width: 80%;
+    }
+
+    .songs h2 {
+        font-size: 1em;
+    }
+
+    .songs p {
+        font-size: 0.8em;
+    }
 }
 
 @media (max-width: 400px) {
+    .character {
+        flex: 1 1 50%;
+        max-width: 100%;
+    }
+
+    .character-list .character {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
     .song-list {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
-}
 
-/* ナビゲーションメニューのレスポンシブ対応 */
-@media (max-width: 600px) {
-    .menu-icon {
-        display: block;
-    }
-
-    .navbar {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-    }
-
-    .navbar li {
-        display: block;
-        text-align: center;
-        padding: 1em 0;
-    }
-
-    .navbar a {
+    header h1 {
         font-size: 1em;
     }
-}
 
-.show {
-    display: flex;
+    .nav-menu a {
+        font-size: 0.7em;
+        padding: 0.2em 0.4em;
+    }
 }

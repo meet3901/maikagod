@@ -16,7 +16,6 @@ a:hover {
     color: inherit; /* 文字色を変えない */
 }
 
-
 /* ヘッダー */
 header {
     background-color: #ffaaaa;
@@ -60,7 +59,6 @@ nav {
     background-color:#ffc8c8;
     color: #fff; /* 色を元のままにする */
 }
-
 
 /* ドロップダウンメニューのスタイル */
 .dropdown-content {
@@ -126,7 +124,7 @@ main {
     flex-direction: column;
     gap: 2em;
     max-width: 1200px; /* 最大幅を設定する例 */
-    min-width: 1000px; /* 最大幅を設定する例 */
+    min-width: 1000px; /* 最小幅を設定する例 */
     width: 100%; /* 幅を100%に設定し、親要素に合わせる */
     margin: 0 auto; /* 中央寄せ */
 }
@@ -162,8 +160,8 @@ main {
     gap: 1em;
 }
 
-p{
-    color:darkgray;
+p {
+    color: darkgray;
     font-size: 15px;
 }
 
@@ -218,7 +216,7 @@ hr {
 
 .member-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 3列に設定 */
     gap: 1em;
     justify-content: center; /* 中央揃え */
 }
@@ -230,15 +228,14 @@ hr {
 .member img {
     width: 100px;
     height: 150px;
-    border-radius: 00%;
-    object-fit: cover; 
+    border-radius: 10%;
+    object-fit: cover;
 }
 
 .member p {
     font-size: 1em;
     color: #333;
 }
-
 
 /* ギャラリーのセクション */
 .extra-photos {
@@ -258,7 +255,7 @@ hr {
 
 .extra-photo-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 幅を大きく */
+    grid-template-columns: repeat(3, 1fr); /* 3列に設定 */
     gap: 1em;
     justify-items: center; /* 中央揃え */
 }
@@ -276,20 +273,92 @@ hr {
     transform: scale(1.05); /* ホバー時に少し拡大 */
 }
 
-/* メディアクエリ */
 @media (max-width: 800px) {
+    /* ヘッダー */
+    header {
+        padding: 0.5em 0; /* パディングを調整 */
+    }
+
+    .nav-menu {
+        justify-content: center; /* メニューを中央揃え */
+        gap: 0.5em; /* 間隔を調整 */
+    }
+
+    .nav-menu a {
+        padding: 0.3em 0.8em; /* パディングを小さく */
+        font-size: 0.9em; /* 文字サイズを小さく */
+    }
+
+    /* ドロップダウンメニュー */
+    .dropdown-content {
+        min-width: 150px; /* 最小幅を調整 */
+    }
+
+    /* フッター */
+    footer {
+        padding: 0.5em 0; /* パディングを調整 */
+    }
+
+    /* メインコンテンツ */
     main {
-        flex-direction: column;
+        padding: 0.5em; /* パディングを調整 */
+        flex-direction: column; /* 縦並びに変更 */
         align-items: center;
+    }
+    /* 曲詳細セクション */
+    .content-left {
+        min-width: auto; /* 最小幅を解除 */
+        width: 100%; /* 幅を100%に */
+    }
+
+    .song {
+        padding: 0.5em; /* パディングを調整 */
+    }
+
+    .song h3 {
+        font-size: 1.2em; /* 文字サイズを調整 */
+    }
+
+    /* メンバーリスト */
+    .content-right {
+        padding: 0.5em; /* パディングを調整 */
+    }
+    .member-list {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* 列数を調整 */
+    }
+
+    .member img {
+        width: 60px; /* 画像サイズを小さく */
+        height: 90px; /* 画像サイズを小さく */
+    }
+    .member p {
+        font-size: 0.7em; /* 文字サイズを調整 */
     }
 
     .content-left, .content-right {
         width: 100%;
     }
-}
-
-@media (min-width: 600px) {
-    .member-list {
-        grid-template-columns: repeat(3, 1fr); /* 幅600px以上の場合、3列に設定 */
+    /* ギャラリーのセクション */
+    .extra-photos {
+        padding: 0.5em; /* パディングを調整 */
     }
+
+    .extra-photo-list {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 幅を小さく */
+        gap: 0.5em; /* 間隔を調整 */
+    }
+
+    .extra-photo-list img {
+        max-width: 150px; /* 最大幅を小さく */
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .content-right {
+        order: 3; /* コンテンツを最下部に移動 */
+        margin-top: 2em; /* 上部に余白を追加 */
+    }
+
 }
