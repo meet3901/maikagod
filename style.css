@@ -303,14 +303,14 @@ main {
     }
 }
 
-@media (min-width: 400px) {
+@media (max-width: 400px) {
     .character {
         flex: 1 1 50%;
         max-width: 100%;
     }
 
     .character-list .character {
-        width: 50%;
+        width: 20%;
         margin-bottom: 10px;
     }
 
@@ -327,3 +327,5 @@ main {
         padding: 0.2em 0.4em;
     }
 }
+
+
