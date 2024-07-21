@@ -303,7 +303,7 @@ main {
     }
 }
 
-@media (max-width: 400px) {
+@media (min-width: 400px) {
     .character {
         flex: 1 1 50%;
         max-width: 100%;
