@@ -8,7 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     width: 100%; /* Bodyの幅を全体に広げる */
 }
 
@@ -161,14 +161,14 @@ main {
 }
 
 p {
-    color: darkgray;
+    color: rgb(119, 119, 119);
     font-size: 15px;
 }
 
 hr {
     border: 0;
     height: 1px;
-    background: #ccc;
+    background: #8a8a8a;
     margin: 10px 0;
 }
 
