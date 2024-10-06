@@ -77,7 +77,7 @@ nav {
     position: absolute;
     background-color: #ffaaaa;
     min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(235, 235, 235, 0.2);
     max-height: 200px;
     overflow-y: auto;
 }
